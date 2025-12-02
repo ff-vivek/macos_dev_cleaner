@@ -1,12 +1,35 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .broom {
+      transform-origin: 172px 96px;
+      transition: transform 0.4s cubic-bezier(.43,1.51,.56,.96);
+    }
+    .sparkle {
+      opacity: 0.7;
+      transition: opacity 0.4s;
+    }
+    svg:hover .broom {
+      transform: rotate(-15deg) translate(-12px, -6px);
+    }
+    svg:hover .sparkle {
+      opacity: 1;
+      filter: drop-shadow(0px 0px 8px #54a0ff);
+      animation: sparklePulse 0.8s alternate infinite;
+    }
+    @keyframes sparklePulse {
+      from { opacity: 1; }
+      to { opacity: 0.4; }
+    }
+  </style>
   <rect x="32" y="48" width="192" height="144" rx="24" fill="#F5F5F7" stroke="#3498DB" stroke-width="8"/>
   <rect x="60" y="172" width="136" height="24" rx="8" fill="#B2BEC3" />
   <circle cx="128" cy="172" r="12" fill="#7F8FA6" />
-  <!-- Broom handle -->
-  <rect x="172" y="96" width="10" height="60" rx="5" transform="rotate(25 172 96)" fill="#F6E58D" />
-  <!-- Broom bristles -->
+  <!-- Broom Handle -->
+  <rect x="172" y="96" width="10" height="60" rx="5" class="broom" transform="rotate(25 172 96)" fill="#F6E58D" />
+  <!-- Broom Bristles -->
   <ellipse cx="190" cy="158" rx="18" ry="8" transform="rotate(15 190 158)" fill="#E1B12C"/>
-  <!-- Sparkles (clean!) -->
-  <polygon points="96,86 99,96 109,98 99,100 96,110 93,100 83,98 93,96" fill="#FFFFFF" opacity="0.8"/>
-  <polygon points="160,60 162,66 168,68 162,70 160,76 158,70 152,68 158,66" fill="#FFFFFF" opacity="0.7"/>
+  <!-- Sparkles (clean) -->
+  <polygon class="sparkle" points="96,86 99,96 109,98 99,100 96,110 93,100 83,98 93,96" fill="#FFFFFF"/>
+  <polygon class="sparkle" points="160,60 162,66 168,68 162,70 160,76 158,70 152,68 158,66" fill="#FFFFFF"/>
 </svg>
